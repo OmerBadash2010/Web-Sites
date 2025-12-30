@@ -5,18 +5,32 @@
 <html>
 <head runat="server">
     <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style>
+        img.menu {
+            width:100px;
+            height:50px
+        }
+    </style>
 </head>
 <body>
-    <h1>Master start</h1>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-    </form>
-     <h1>Master end</h1>
+    <h1>My Site</h1>
+    <center>
+        <table border="1" width="80%" height="700px">
+            <tr>
+                <td>
+                    <a href="Register.aspx">
+                        <img class="menu" src="Images/הרשמה.png" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+    </center>
 </body>
 </html>
