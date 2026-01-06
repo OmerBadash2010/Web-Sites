@@ -1,36 +1,88 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
-
-<html>
+<html dir="rtl">
 <head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <title>ריאל מדריד</title>
+
     <style>
-        img.menu {
-            width:100px;
-            height:50px
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #f0f0f0;
+        }
+
+        /* כותרת */
+        .header {
+            text-align: center;
+            font-size: 50px;
+            padding: 15px 0;
+            background-color: white;
+            border-bottom: 2px solid #ccc;
+        }
+
+        /* תפריט */
+        .menu {
+            display: flex;
+            width: 100%;
+            height: 150px;
+            background-color: beige;
+            gap: 6px;              /* עוד טיפה רווחים */
+            padding: 6px;
+            box-sizing: border-box;
+        }
+
+        .menu a {
+            flex: 1;
+            display: block;
+        }
+
+        .menu img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+
+            /* צבע כחול אחיד */
+            filter: 
+                grayscale(100%)
+                sepia(100%)
+                hue-rotate(190deg)
+                saturate(600%);
+        }
+
+        /* תוכן */
+        .content {
+            text-align: center;
+            padding: 30px;
         }
     </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server" />
 </head>
+
 <body>
-    <h1>My Site</h1>
-    <center>
-        <table border="1" width="80%" height="700px">
-            <tr>
-                <td>
-                    <a href="Register.aspx">
-                        <img class="menu" src="Images/הרשמה.png" /></a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
-                </td>
-            </tr>
-        </table>
-    </center>
+
+    <!-- כותרת -->
+    <div class="header">
+        ריאל מדריד
+    </div>
+
+    <!-- תפריט תמונות -->
+    <div class="menu">
+        <a href="homePage.aspx"><img src="Images/home.png" class="main" /></a>
+        <a href="entryPage.aspx"><img src="Images/entry.png" class="main" /></a>
+        <a href="galleryPage.aspx"><img src="Images/gallrey.png" class="main" /></a>
+        <a href="harshamaPage.aspx"><img src="Images/harshama.png" class="main" /></a>
+        <a href="managementPage.aspx"><img src="Images/management.png" class="main" /></a>
+        <a href="hiposPage.aspx"><img src="Images/hipos.png" class="main" /></a>
+        <a href="exitPage.aspx"><img src="Images/exit.png" class="main" /></a>
+    </div>
+
+    <!-- תוכן -->
+    <div class="content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" />
+    </div>
+
 </body>
 </html>
