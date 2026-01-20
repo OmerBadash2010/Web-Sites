@@ -54,6 +54,9 @@
             אימייל:
             <input type="email" name="email" placeholder="example@email.com" />
 
+            סיסמה:
+            <input type="text" name="password" placeholder="הכנס סיסמה" />
+
             מספר טלפון:
             <input type="tel" name="phone" placeholder="050-0000000" />
 
