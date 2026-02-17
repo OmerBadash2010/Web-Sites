@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="הרשמה לאתר של ריאל מדריד" Language="C#" MasterPageFile="~/MasterPage.master"
-    AutoEventWireup="true" CodeFile="hiposPage.aspx.cs" Inherits="hiposPage" %>
+    AutoEventWireup="true" CodeFile="harshamaPage.aspx.cs" Inherits="harshamaPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -89,5 +89,7 @@
             <input type="submit" value="הרשמה" />
         </form>
     </div>
+
+    <%=st %>
 
 </asp:Content>
