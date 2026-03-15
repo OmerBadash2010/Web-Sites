@@ -17,7 +17,7 @@ public partial class managementPage : System.Web.UI.Page
             string player = Request.Form["player"];
 
             string sqlSelect = "SELECT * FROM tUsers" +
-                " WHERE fullname = N'" + fullname + "'" +
+                " WHERE fullname LIKE N'%" + fullname + "%'" +
                 " AND player = N'" + player + "'";
 
             DataTable dt = MyAdoHelper.ExecuteDataTable(sqlSelect);
