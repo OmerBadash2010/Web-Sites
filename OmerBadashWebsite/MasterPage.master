@@ -62,7 +62,7 @@
 </head>
 
 <body>
-
+    שלום <%=Session["userName"] %>
     <!-- כותרת -->
     <div class="header">
         ריאל מדריד
