@@ -2,6 +2,8 @@
 
 public partial class AddPage : System.Web.UI.Page
 {
+    public string st;
+
     public string Age;
     public string JoinDate;
     public string Nationality;
@@ -23,7 +25,7 @@ public partial class AddPage : System.Web.UI.Page
             StrongFoot = Request.Form["StrongFoot"];
 
             string sqlInsert =
-                "INSERT INTO morielBall " +
+                "INSERT INTO RealMadrid " +
                 "(Age, JoinDate, Nationality, Height, Position, ShirtNumber, StrongFoot) VALUES (" +
                 Age + "," +
                 "'" + JoinDate + "'," +
@@ -34,7 +36,9 @@ public partial class AddPage : System.Web.UI.Page
                 "N'" + StrongFoot + "'" +
                 ")";
 
-            MyAdoHelper.DoQuery(sqlInsert, "yourConnectionString");
+            MyAdoHelper.DoQuery("myDB.mdf",sqlInsert);
+
+            st = "ok";
         }
     }
 }

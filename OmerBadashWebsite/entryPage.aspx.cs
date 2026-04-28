@@ -15,6 +15,7 @@ public partial class entryPage : System.Web.UI.Page
             // Admin check
             if (email == "N@gmail.com" && password == "1")
             {
+                Session["nihol"] = "ok";
                 Session["userName"] = "Admin";
                 Response.Redirect("managementPage.aspx");
             }
@@ -23,13 +24,16 @@ public partial class entryPage : System.Web.UI.Page
                 string sqlSelect = "SELECT * FROM tUsers WHERE email = N'"
                                     + email + "' AND password = N'"
                                     + password + "'";
+                System.Data.DataTable dt = MyAdoHelper.ExecuteDataTable(sqlSelect);
 
-                bool isExist = MyAdoHelper.IsExist(sqlSelect);
+               
 
-                if (isExist)
+                if (dt.Rows.Count>0)
                 {
-                    Session["userName"] = "User";
+                    Session["user"] = "ok";
+                    Session["userName"] = dt.Rows[0]["fullname"];
                     Response.Redirect("HomePage.aspx");
+                    Session["userName"] = "רשום";
                 }
                 else
                 {
